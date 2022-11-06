@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<title>API</title>
+<style>
+    .card{
+        background-color: lightblue;
+        border-radius: 10px;
+        height: 647px;
+        width: 400px;
+        justify-content: center;
+        margin-top: 100px;
+        margin-left: 500px;
+    }
+    .ft{
+        width: 398;
+        height: 250px;
+        background-color: rgb(162, 162, 240);
+    }
+    .ft img{
+        margin-top: 210px;
+        margin-left: 160px;
+        border-radius: 40px;
+    }
+    .name{
+        width: 398;
+        height: 82px;
+    }
+    .profession{
+        width: 398;
+        height: 82px;
+    }
+    .bio{
+        width: 398;
+        height: 82px;   
+    }
+    .button{
+        width: 398;
+        height: 82px;
+        margin-left: 130px;
+        margin-top: 25px;
+    }
+    #name{
+        text-align: center;
+        margin-top: 40px;
+    }
+    #profession{
+        text-align: center;
+    }
+    #bio{
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+<div class="card">
+    <div class="ft">
+        <div id="image" class="img">
+            <img height="80px" width="80px" src="img.jpg" alt="Profile">
+        </div>
+    </div>
+    <div class="sd">
+        <div class="name">
+            <h5 id="name"></h5>
+        </div>
+        <div class="profession">
+            <h6 id="profession"></h6>
+        </div>
+        <div class="bio">
+            <p id="bio"></p>
+        </div>
+        <div class="button">
+            <a id="link1" href="" target="_blank"> 
+                <button type="button" class="btn btn-primary btn-lg">Profile</button>
+            </a>
+        </div>
+    </div>
+</div>
+<script>
+fetch('https://api.github.com/users/asadali436')
+  .then(response => response.json())
+  .then(json => {
+document.getElementById("name").innerHTML = json.name;
+document.getElementById("profession").innerHTML = "Mern Stake Developer";
+document.getElementById("link1").herf = json.url;
+document.getElementById("bio").innerHTML = json.bio;
+  })
+</script>
+</body>
+</html>
